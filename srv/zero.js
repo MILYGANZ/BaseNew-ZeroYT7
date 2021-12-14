@@ -375,7 +375,7 @@ break
 case 'sebulan':
 sebulan =
 `Untuk Harga Sewa Bot 
-Sebulan 10.000
+Sebulan 5.000
 
 Silahkan Pilih Metode Pembayarannya Dibawah Ini`
 but = [
@@ -388,7 +388,7 @@ break
 case 'permanen':
 permanen =
 `Untuk Harga Sewa Bot 
-Permanen 15.000
+Permanen 10.000
 
 Silahkan Pilih Metode Pembayarannya Dibawah Ini`
 but = [
@@ -400,8 +400,8 @@ sendButLocation(from, permanen, faketeks, fakethumb, but, { thumbnail: Buffer.al
 break
 case 'gopay':
 gopay =
-`No Gopay : 085157740529
-A/N : Mikey`
+`No Gopay : 083871644778
+A/N : Mily Ganz`
 but = [
 { buttonId: `owner`, buttonText: { displayText: 'DONE' }, type: 1 }
 ]
@@ -409,8 +409,8 @@ sendButMessage(from, gopay, faketeks, but, zer)
 break
 case 'dana':
 dana =
-`No Dana : 085713029931
-A/N : Mustakim`
+`No Dana : 083871644778
+A/N : Rico Gans`
 but = [
 { buttonId: `owner`, buttonText: { displayText: 'DONE' }, type: 1 }
 ]
@@ -486,6 +486,7 @@ teks =
 
 𝐎𝐰𝐧𝐞𝐫 𝐌𝐞𝐧𝐮
 • ${prefix}bc
+• ${prefix}bcgc
 
 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐌𝐞𝐧𝐮
 • ${prefix}pinterest
@@ -838,6 +839,7 @@ type: 1,
 break
 case 'group':
 case 'grup':
+case 'gr':
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isGroup) return reply(mess.only.group)
 if (!isBotGroupAdmins) return reply(mess.only.bodmin)
@@ -862,6 +864,7 @@ reply(`\`\`\`𝐒𝐮𝐤𝐬𝐞𝐬 𝐌𝐞𝐧𝐮𝐭𝐮𝐩 𝐆𝐫𝐨�
 zero.groupSettingChange(from, GroupSettingChange.messageSend, true)
 break
 case 'linkgrup' :
+case 'linkgc' :
 if (!isGroup) return reply(mess.only.group)
 if (!isBotGroupAdmins) return reply(mess.only.bodmin)
 linkgc = await zero.groupInviteCode(from)
@@ -975,7 +978,7 @@ reply(`\`\`\`𝐒𝐮𝐤𝐬𝐞𝐬 𝐌𝐞𝐧𝐠𝐠𝐚𝐧𝐭𝐢 𝐏�
 break
 
 case 'bc':
-case 'bcbut':
+case 'bcgc':
 if (!isOwner && !x.key.fromMe) return reply(`Hanya Untuk @${ownerNumbers.split("@")[0]}`)
 if (args.length < 1) return reply('Teksnya?')
 anu = await zero.chats.all()
@@ -995,6 +998,7 @@ break
 case 'sticker':
 case 'stiker':
 case 's':
+case '🗿':
 if ((isMedia && !zer.message.videoMessage || isQuotedImage) && args.length == 0) {
 let encmedia = isQuotedImage ? JSON.parse(JSON.stringify(zer).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : zer
 let media = await zero.downloadAndSaveMediaMessage(encmedia, './storage/media_user')
@@ -1069,6 +1073,7 @@ reply(`Kirim Gambar Dengan Caption ${prefix}sticker Atau Tag Gambar Yang Sudah D
 }
 break
 case 'attp':
+case 'tp':
 if (args.length == 0) return reply(`Example: ${prefix + command} Hai`)
 buffer = await getBuffer(`https://api.xteam.xyz/attp?file&text=${encodeURI(q)}`)
 zero.sendMessage(from, buffer, sticker, { quoted: ftrol })
@@ -1170,6 +1175,7 @@ sendWebp(from, `${link}`).catch(() => reply('gagal'))
 })
 break
 case 'tomp3':
+case 'mp3':
 zero.updatePresence(from, Presence.composing)
 if (!isQuotedVideo) return reply('Reply Video Nya Kak')
 reply(mess.wait)
@@ -1250,6 +1256,7 @@ fs.unlinkSync(median)
 break
 
 case 'owner':
+case 'own':
 let inilist = []
 for (let i of ownerNumber) {
 let vname = zero.contacts[i] != undefined ? zero.contacts[i].vname || zero.contacts[i].notify : undefined
@@ -1294,17 +1301,17 @@ reply('Masalah Telah Di Laporkan Ke Owner BOT, Mohon Tunggu Untuk Proses Perbaik
 break
 case 'youtube':
 teks =
-`Nih Youtube Owner Ku Jangan Lupa Di Subscribe Ya https://youtube.com/ZeroYT7`
+`Nih Youtube Owner Ku Jangan Lupa Di Subscribe Ya https://youtube.com/channel/UCpNUGFU5ZbGaYiNbmH-XNUA`
 zero.sendMessage(from, teks, text, {quoted: ftrol})
 break
 case 'instagram':
 teks =
-`Nih Instagram Owner Ku Jangan Lupa Di Follow Ya https://instagram.com/Zero_YT7`
+`Nih Instagram Owner Ku Jangan Lupa Di Follow Ya https://instagram.com/albarkusa77`
 zero.sendMessage(from, teks, text, {quoted: ftrol})
 break
 case 'tiktok':
 teks =
-`Nih Tiktok Owner Ku Jangan Lupa Di Follow Ya https://tiktok.com/@_zeroyt7`
+`Nih Tiktok Owner Ku Jangan Lupa Di Follow Ya https://tiktok.com/@mily.ganz`
 zero.sendMessage(from, teks, text, {quoted: ftrol})
 break
 case "runtime":
