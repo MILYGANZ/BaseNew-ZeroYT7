@@ -206,8 +206,8 @@ Iv: 'Link Error Silahkan Ganti Yg Lain'
 },
 only: {
 group: 'Khusus Di Group',
-bodmin: 'Jadikan Bot Admin Dulu',
-admin: 'Khusus Admin Group'
+bodmin: 'Jadikan Bot Admin Dulu yaa kak',
+admin: 'Khusus Admin Group kak'
 }
 }
 
@@ -242,7 +242,7 @@ orderMessage: {
 itemCount : 169,
 status: 1,
 surface : 1,
-message: `Subscribe Zero YT7`, 
+message: `Subscribe Mily Ganzz`, 
 orderTitle: `Subscribe Zero YT7`,
 thumbnail: fakethumb,
 sellerJid: '0@s.whatsapp.net' 
@@ -359,7 +359,7 @@ fs.unlinkSync(filename)
 if (isGroup && isAntilink && !zer.key.fromMe) {
 if (budy.includes("://chat.whatsapp.com/")) {
 if (isGroupAdmins) return reply("admin bebas");
-reply("ANTILINK DETECTED!! Maaf Kamu Dikick Dari Group");
+reply("ANTILINK DETECTED!! Jangan mengulangi lagi yaa...Maaf Kamu Dikick Dari Group");
 zero.groupRemove(from, [sender]);
 }
 }
@@ -390,6 +390,7 @@ switch (command) {
 
 case 'menu':
 case 'help':
+case 'm':
 teks =
 `𝐇𝐚𝐥𝐥𝐨... ${pushname}, ${ucapanWaktu}
 𝐀𝐩𝐚 𝐊𝐚𝐛𝐚𝐫...? 𝐒𝐞𝐦𝐨𝐠𝐚 𝐇𝐚𝐫𝐢𝐦𝐮 𝐌𝐞𝐧𝐲𝐞𝐧𝐚𝐧𝐠𝐤𝐚𝐧
@@ -426,6 +427,7 @@ teks =
 • ${prefix}sticker
 • ${prefix}toimg
 • ${prefix}attp
+• ${prefix}tp
 
 𝐒𝐭𝐨𝐫𝐚𝐠𝐞 𝐌𝐞𝐧𝐮
 • ${prefix}owner
@@ -435,6 +437,7 @@ teks =
 
 𝐎𝐰𝐧𝐞𝐫 𝐌𝐞𝐧𝐮
 • ${prefix}bc`
+• ${prefix}bc²'
 sendButLocation(from, teks, faketeks, {jpegThumbnail:fakeimg,name:""}, [{buttonId:`owner`,buttonText:{displayText:'OWNER'},type:1},{buttonId:`script`,buttonText:{displayText:'SCRIPT'},type:1}], {contextInfo: { mentionedJid: [num]}})
 break
 case 'welcome': 
@@ -457,7 +460,7 @@ anu =`SILAHKAN PILIH SALAH SATU`
 punten = [{buttonId: 'welcome off', buttonText: {displayText: 'OFF'}, type: 1},{buttonId: 'welcome on', buttonText: {displayText: 'ON️'}, type: 1}]
 var btngrass = {
 contentText: `${anu}`,
-footerText: 'Created By Zero YT7',
+footerText: 'Created By Mily Ganzz',
 buttons: punten,
 headerType: 1
 }
@@ -542,6 +545,7 @@ type: 1,
 break
 case 'group':
 case 'grup':
+case 'gc':
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isGroup) return reply(mess.only.group)
 if (!isBotGroupAdmins) return reply(mess.only.bodmin)
@@ -623,6 +627,7 @@ reply('𝐆𝐚𝐠𝐚𝐥 𝐌𝐞𝐧𝐚𝐦𝐛𝐚𝐡𝐤𝐚𝐧 𝐓�
 }
 break
 case 'kick':
+case 'k':
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.bodmin)
@@ -651,6 +656,7 @@ zero.groupUpdateSubject(from, `${body.slice(9)}`)
 zero.sendMessage(from, `\`\`\`𝐒𝐮𝐤𝐬𝐞𝐬 𝐌𝐞𝐧𝐠𝐠𝐚𝐧𝐭𝐢 𝐍𝐚𝐦𝐚 𝐆𝐫𝐨𝐮𝐩 𝐌𝐞𝐧𝐣𝐚𝐝𝐢\`\`\` *${body.slice(9)}*`, text, { quoted: ftrol })
 break
 case 'setdesc':
+case 'desc':
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.bodmin)
@@ -669,6 +675,7 @@ members_id.push(mem.jid)
 mentions(ht, members_id, false)
 break
 case 'setpp':
+case 'pp':
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
@@ -699,6 +706,7 @@ break
 case 'sticker':
 case 'stiker':
 case 's':
+case 'xxx':
 if ((isMedia && !zer.message.videoMessage || isQuotedImage) && args.length == 0) {
 let encmedia = isQuotedImage ? JSON.parse(JSON.stringify(zer).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : zer
 let media = await zero.downloadAndSaveMediaMessage(encmedia, './storage/media_user')
@@ -773,11 +781,13 @@ reply(`Kirim Gambar Dengan Caption ${prefix}sticker Atau Tag Gambar Yang Sudah D
 }
 break
 case 'attp':
+case 'tp':
 if (args.length == 0) return reply(`Example: ${prefix + command} Hai`)
 buffer = await getBuffer(`https://api.xteam.xyz/attp?file&text=${encodeURI(q)}`)
 zero.sendMessage(from, buffer, sticker, { quoted: ftrol })
 break
 case 'toimg':
+case 'img':
 if (!isQuotedSticker) return reply('Reply Stickernya')
 encmedia = JSON.parse(JSON.stringify(zer).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 media = await zero.downloadAndSaveMediaMessage(encmedia, './storage/media_user')
@@ -792,11 +802,12 @@ fs.unlinkSync(ran)
 break
 
 case 'owner':
+case 'own':
 let inilist = []
 for (let i of ownerNumber) {
 let vname = zero.contacts[i] != undefined ? zero.contacts[i].vname || zero.contacts[i].notify : undefined
 inilist.push({
-"displayName": 'ZeroYT7',
+"displayName": 'MilyGanzz',
 "vcard": 'BEGIN:VCARD\n'
 + 'VERSION:3.0\n'
 + `FN:${NameOwner}\n`
@@ -836,25 +847,25 @@ reply('Masalah Telah Di Laporkan Ke Owner BOT, Mohon Tunggu Untuk Proses Perbaik
 break
 case 'youtube':
 teks =
-`Nih Youtube Owner Ku Jangan Lupa Di Subscribe Ya https://youtube.com/ZeroYT7`
+`Nih Youtube Owner Ku Jangan Lupa Di Subscribe Ya https://youtube.com/channel/UCpNUGFU5ZbGaYiNbmH-XNUA`
 zero.sendMessage(from, teks, text, {quoted: ftrol})
 break
 case 'instagram':
 teks =
-`Nih Instagram Owner Ku Jangan Lupa Di Follow Ya https://instagram.com/Zero_YT7`
+`Nih Instagram Owner Ku Jangan Lupa Di Follow Ya https://instagram.com/albarkusa77`
 zero.sendMessage(from, teks, text, {quoted: ftrol})
 break
 case 'tiktok':
 teks =
-`Nih Tiktok Owner Ku Jangan Lupa Di Follow Ya https://tiktok.com/@_zeroyt7`
+`Nih Tiktok Owner Ku Jangan Lupa Di Follow Ya https://vt.tiktok.com/ZSePdh19a/`
 zero.sendMessage(from, teks, text, {quoted: ftrol})
 break
 case 'sourcecode':
 case 'script':
 case 'sc':
 teks = `[ 𝗜𝗡𝗙𝗢 𝗦𝗖𝗥𝗜𝗣𝗧 𝗕𝗢𝗧 ]
-𝐂𝐫𝐞𝐚𝐭𝐨𝐫 𝐒𝐜𝐫𝐢𝐩𝐭 : Zero YT7
-𝐋𝐢𝐧𝐤 𝐒𝐜𝐫𝐢𝐩𝐭 : https://github.com/Zero-YT7/BaseNew-ZeroYT7`
+𝐂𝐫𝐞𝐚𝐭𝐨𝐫 𝐒𝐜𝐫𝐢𝐩𝐭 : Mily Ganzz
+𝐋𝐢𝐧𝐤 𝐒𝐜𝐫𝐢𝐩𝐭 : https://github.com/MILYGANZ`
 zero.sendMessage(from, teks, text, {quoted : zer})
 break
 case "runtime":
