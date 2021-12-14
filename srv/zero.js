@@ -48,7 +48,7 @@ var moment = require('moment-timezone')
 var { exec, spawn, execSync } = require('child_process')
 fakeimg = fs.readFileSync('./img/zero.jpg')
 fakethumb = fs.readFileSync('./img/thumbnail.jpg')
-faketeks = '©Created By Zero YT7'
+faketeks = '©Created By Mily Ganzz'
 blocked = []
 multi =false
 nopref = false
@@ -437,7 +437,7 @@ teks =
 
 𝐎𝐰𝐧𝐞𝐫 𝐌𝐞𝐧𝐮
 • ${prefix}bc`
-• ${prefix}bc²'
+• ${prefix}bc²`
 sendButLocation(from, teks, faketeks, {jpegThumbnail:fakeimg,name:""}, [{buttonId:`owner`,buttonText:{displayText:'OWNER'},type:1},{buttonId:`script`,buttonText:{displayText:'SCRIPT'},type:1}], {contextInfo: { mentionedJid: [num]}})
 break
 case 'welcome': 
