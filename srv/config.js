@@ -1,8 +1,8 @@
 {
-"Lolkey": "YOUR APIKEY",
-"Vhtear": "YOUR APIKEY",
-"Xteam": "YOUR APIKEY",
-"Zeks": "YOUR APIKEY",
-"Nurutomo": "YOUR APIKEY",
-"Zero": "ZeroYT7"
+"Lolkey": "https://github.com/MILYGANZ",
+"Vhtear": "https://github.com/MILYGANZ",
+"Xteam": "https://github.com/MILYGANZ",
+"Zeks": "https://github.com/MILYGANZ",
+"Nurutomo": "https://github.com/MILYGANZ",
+"Zero": "MILYGANZZ"
 }
